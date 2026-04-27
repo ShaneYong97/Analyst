@@ -412,7 +412,7 @@
       background: linear-gradient(135deg, #EDE8DF, #D4C4A8);
     }
     .ki-header-text { flex: 1; }
-    .ki-header-text h4 { font-size: 0.9rem; margin-bottom: 0.15rem; }
+    .ki-header-text h4 { font-size: 1rem; font-weight: 700; margin-bottom: 0.15rem; font-family: 'Playfair Display', Georgia, serif; }
     .ki-header .ki-tag {
       display: inline-block; font-size: 0.68rem;
       background: rgba(184,152,110,0.12); color: var(--accent-dark);
@@ -486,7 +486,7 @@
     .insight-card:hover .img-overlay { transform: scale(1.08); }
     .insight-card .card-body { padding: 1rem; }
     .insight-card .card-date { font-size: 0.72rem; color: var(--grey); margin-bottom: 0.35rem; text-transform: uppercase; letter-spacing: 0.5px; }
-    .insight-card .card-body h3 { font-size: 0.92rem; margin-bottom: 0.35rem; line-height: 1.4; }
+    .insight-card .card-body h3 { font-size: 1rem; font-weight: 700; margin-bottom: 0.35rem; line-height: 1.4; font-family: 'Playfair Display', Georgia, serif; }
     .insight-card .card-body p { font-size: 0.8rem; color: var(--grey-dark); line-height: 1.5; }
     .insight-card .read-more {
       display: inline-block; margin-top: 0.5rem;
@@ -538,7 +538,7 @@
     .research-section .section-subtitle { color: rgba(255,255,255,0.6); }
     .research-text p { color: rgba(255,255,255,0.8); margin-bottom: 0.9rem; line-height: 1.7; font-size: 0.95rem; }
     .research-highlights { display: flex; gap: 1.5rem; margin: 1.3rem 0; }
-    .rh-item { text-align: center; }
+    .rh-item { text-align: center; flex: 1; min-width: 80px; }
     .rh-item .rh-val { font-size: 1.5rem; font-weight: 700; color: var(--khaki); }
     .rh-item .rh-label { font-size: 0.75rem; color: rgba(255,255,255,0.55); }
 
@@ -700,7 +700,7 @@
     }
 
     @media (max-width: 600px) {
-      .research-highlights { flex-direction: column; align-items: flex-start; }
+      .research-highlights { flex-wrap: wrap; justify-content: center; gap: 1rem; }
       .footer-links { flex-direction: column; gap: 0.8rem; }
     }
   </style>
@@ -740,13 +740,11 @@
   <section class="section" id="about">
     <div class="fade-up">
       <h2 class="section-title">About Me</h2>
-      <p class="section-subtitle">Career aspirations, achievements, and what drives me.</p>
     </div>
     <div class="about-grid">
       <div class="fade-up stagger-1 about-text">
-        <p>I am currently looking to pursue my aspiration to become an Investment Analyst — it has always been my dream job as I like the idea of playing a part in the evolution of the global landscape, by being involved in the market through every step of how the global economic landscape shifts.</p>
-        <p>I strive to become an impactful individual within the industry that can contribute to the ecosystem and implement my view of the world in my portfolio.</p>
-        <p>To achieve this, I have been working on my equity research and portfolio management skills after clearing the CFA program. Part of these efforts includes reading from the bright minds in the industry such as Benjamin Graham, Aswath Damodaran, Ray Dalio, and James Valentine, CFA. I have also participated in bootcamps held by AmplifyME for Investment Banking and Portfolio Management, and completed an equity research report for Costco based on what I have learned.</p>
+        <p>I am currently looking to pursue my aspiration to become an Investment Analyst, it has always been my dream job as I like the idea of playing a part in the evolution of the global landscape, by being involved in the market through every step of how the global economic landscape shifts. I strive to become an impactful individual within the industry that can contribute to the ecosystem and implement my view of the world in my portfolio.</p>
+        <p>To achieve this, I have been working on my equity research and portfolio management skills after clearing the CFA program. Part of these efforts includes reading from the bright minds in the industry such as Benjamin Graham, Aswath Damodaran, Ray Dalio, James Valentine, CFA. On top of that, I have participated in the bootcamps held by AmplifyME for Investment Banking and Portfolio Management, where I experience the work of an Investment Banking Analyst and a Portfolio Manager. I have also completed an equity research report for Costco based on what I have learned, the report can be accessed within this website as well.</p>
         <div class="skills-wrap" id="skillsWrap">
           <span class="skill-tag">Business Development</span>
           <span class="skill-tag">DCF Valuation</span>
@@ -766,25 +764,25 @@
           <div class="bubble-glow"></div>
           <div class="ac-icon">📜</div>
           <div class="ac-title">CFA Charterholder</div>
-          <span class="bubble-tip">Cleared CFA program & awarded Charter within 3 years</span>
+          <span class="bubble-tip">Cleared CFA program and awarded CFA Charter within 3 years</span>
         </div>
         <div class="bubble bubble-2">
           <div class="bubble-glow"></div>
           <div class="ac-icon">🏆</div>
           <div class="ac-title">Top 10% in CFA L2</div>
-          <span class="bubble-tip">Scored in the 90th percentile in CFA Level 2 exam</span>
+          <span class="bubble-tip">Scored in the 90th percentile in CFA level 2 exam</span>
         </div>
         <div class="bubble bubble-3">
           <div class="bubble-glow"></div>
           <div class="ac-icon">🚀</div>
           <div class="ac-title">Consistently Promoted</div>
-          <span class="bubble-tip">Hit promotion criteria as Banker & Insurance Broker</span>
+          <span class="bubble-tip">Hit promotion criteria consistently as Personal Banker and Corporate Insurance Broker</span>
         </div>
         <div class="bubble bubble-4">
           <div class="bubble-glow"></div>
           <div class="ac-icon">🎯</div>
           <div class="ac-title">Top 10% in PM Bootcamp</div>
-          <span class="bubble-tip">6th out of 66 in AmplifyME Portfolio Management Simulation</span>
+          <span class="bubble-tip">Scored 6th place out of 66 participants in Portfolio Management Simulation held by AmplifyME</span>
         </div>
       </div>
     </div>
@@ -797,75 +795,46 @@
       <!-- LEFT: Knowledge Log -->
       <div class="fade-left knowledge-col">
         <h2 class="col-title" style="position:relative;display:inline-block;">Knowledge Log<span style="position:absolute;left:0;bottom:-5px;width:40px;height:3px;background:var(--grey);border-radius:2px;"></span></h2>
-        <p style="color:var(--grey);margin:0.8rem 0 1.3rem;font-size:0.88rem;">Tracking my learning milestones and technical growth.</p>
+        <p style="color:var(--grey);margin:0.8rem 0 1.3rem;font-size:0.88rem;">Snippets of knowledge learned throughout my journey.</p>
 
         <div class="knowledge-item stagger-1 fade-up" onclick="this.classList.toggle('open')">
           <div class="ki-header">
-            <div class="ki-icon">CF</div>
             <div class="ki-header-text">
-              <h4>Identifying a Stock's Critical Factors</h4>
-              <span class="ki-tag">Research Framework</span>
+              <h4>Identify and Monitor a Stock's Critical Factors</h4>
+              <span class="ki-tag">Equity Research</span>
             </div>
             <div class="ki-toggle">▼</div>
           </div>
           <div class="ki-body">
-            <p>A critical factor must occur within the investment horizon, have a clear catalyst, and cause material change — EPS or Cash flow per share of 5%, or ROIC/ROE of 50bps. Identify them by comparing relative valuation levels and financial metrics against index and peers, computing CAGR of financial metrics over the years, performing DuPont Analysis, and examining current assumptions critical to consensus.</p>
-          </div>
-        </div>
-
-        <div class="knowledge-item stagger-2 fade-up" onclick="this.classList.toggle('open')">
-          <div class="ki-header">
-            <div class="ki-icon">CAT</div>
-            <div class="ki-header-text">
-              <h4>Finding Catalysts</h4>
-              <span class="ki-tag">Catalysts</span>
-            </div>
-            <div class="ki-toggle">▼</div>
-          </div>
-          <div class="ki-body">
-            <p>Catalysts are typically found in: company-sponsored analyst meetings and calls, earnings releases, annual pricing/volume/earnings guidance, deadlines for new legislation, pre-scheduled announcements by customers, competitors and suppliers, new product releases, and interim sales data for the company or sector. Look for oversimplified investment theses that miss these triggers.</p>
+            <p><strong>Definition of a critical factor:</strong> Occur within investment horizon. Have a clear catalyst. Causes Material change in growth, corporate event, and volatility profile. EPS or Cash flow per share of 5%. ROIC or ROE of 50bps.</p>
+            <p><strong>How to find critical factor:</strong> Compare relative valuation level &amp; financial metrics of the stock against index &amp; peers. Compute CAGR of financial metrics over the years. Dupont Analysis. Current assumptions critical to current consensus. Oversimplified investment thesis.</p>
+            <p><strong>Catalysts are usually found in:</strong> Company sponsored analyst meeting and calls. Earnings release. Company's annual pricing, volume, earnings guidance or projection. Deadlines for new legislation. Pre-scheduled announcements by company's customers, competitors and suppliers. New Product releases. Interim sales data for the company or sector.</p>
           </div>
         </div>
 
         <div class="knowledge-item stagger-3 fade-up" onclick="this.classList.toggle('open')">
           <div class="ki-header">
-            <div class="ki-icon">VAL</div>
             <div class="ki-header-text">
-              <h4>What Makes Valuable Research</h4>
-              <span class="ki-tag">Research Quality</span>
+              <h4>A valuable research should be</h4>
+              <span class="ki-tag">Equity Research</span>
             </div>
             <div class="ki-toggle">▼</div>
           </div>
           <div class="ki-body">
-            <p>A valuable research must be: <strong>Expectational</strong> — forward looking. <strong>Novel</strong> — have a quantifiable unique insight. <strong>Thorough</strong> — an investment thesis backed by legitimate data. <strong>Examinable</strong> — shows your work backing your calls. <strong>Revealing</strong> — shows you know what could go wrong.</p>
+            <p><strong>Expectational</strong> – forward looking. <strong>Novel</strong> – Have a quantifiable unique insight. <strong>Thorough</strong> – an investment thesis must be backed by legit data. <strong>Examinable</strong> – shows your work backing your calls. <strong>Revealing</strong> – shows you know what could go wrong.</p>
           </div>
         </div>
 
-        <div class="knowledge-item stagger-4 fade-up" onclick="this.classList.toggle('open')">
+        <div class="knowledge-item stagger-3 fade-up" onclick="this.classList.toggle('open')">
           <div class="ki-header">
-            <div class="ki-icon">DuP</div>
             <div class="ki-header-text">
-              <h4>Analytical Techniques</h4>
-              <span class="ki-tag">Valuation</span>
-            </div>
-            <div class="ki-toggle">▼</div>
-          </div>
-          <div class="ki-body">
-            <p>Compare relative valuation levels and financial metrics of the stock against index and peers. Compute CAGR of financial metrics over the years. Apply DuPont Analysis to decompose returns. Scrutinise current assumptions critical to current consensus and identify where the market may be oversimplifying the investment thesis.</p>
-          </div>
-        </div>
-
-        <div class="knowledge-item stagger-4 fade-up" onclick="this.classList.toggle('open')">
-          <div class="ki-header">
-            <div class="ki-icon">Rf</div>
-            <div class="ki-header-text">
-              <h4>Choice of Risk-Free Rate</h4>
+              <h4>Choice of Risk Free Rate</h4>
               <span class="ki-tag">DCF Valuation</span>
             </div>
             <div class="ki-toggle">▼</div>
           </div>
           <div class="ki-body">
-            <p>The risk-free rate can be based on a T-bond or T-bill rate, depending on the time horizon and risk averseness. However, it must be consistent with the measure used for the Equity Risk Premium. Matching the duration of the risk-free rate to the investment horizon ensures internal consistency in the DCF framework.</p>
+            <p>Risk free rate can be based on T-bond or T-bill rate, depending on time horizon and risk averseness. However it must be consistent with the measure for Equity risk premium.</p>
           </div>
         </div>
       </div>
@@ -873,18 +842,15 @@
       <!-- RIGHT: Insights & Sharing -->
       <div class="fade-right insights-col">
         <h2 class="col-title" style="position:relative;display:inline-block;">Insights &amp; Sharing<span style="position:absolute;left:0;bottom:-5px;width:40px;height:3px;background:var(--accent);border-radius:2px;"></span></h2>
-        <p style="color:var(--grey);margin:0.8rem 0 1.3rem;font-size:0.88rem;">Personal reflections, market observations, and lessons learned.</p>
+        <p style="color:var(--grey);margin:0.8rem 0 1.3rem;font-size:0.88rem;">A piece of my mind.</p>
 
         <div class="insights-grid">
           <a href="insights/erp-estimation-period.html" class="insight-card-link fade-up stagger-1">
             <div class="insight-card">
-              <div class="card-img" style="background:linear-gradient(135deg,#3A3350,#1A1A2E);">
-                <div class="img-overlay">📈</div>
-              </div>
               <div class="card-body">
                 <div class="card-date">April 2026</div>
-                <h3>The Optimal Period for Estimating Equity Risk Premium</h3>
-                <p>A longer estimation period lowers standard error, but does the perception of equity risk in 1928 still hold today? Finding the right balance between reliability and relevance is key.</p>
+                <h3>The Optimal Time Period for the Estimation of Equity Risk Premium</h3>
+                <p>For the estimation of equity risk premium, a longer time period generally leads to a lower standard error, and hence a more reliable and less biased measure. However one question that surfaces is 'does the perception of equity risk in 1928 remain the same with what we're looking at now?'</p>
                 <span class="read-more">Read more <span class="arrow">&rarr;</span></span>
               </div>
             </div>
@@ -902,7 +868,7 @@
     <div class="research-inner">
       <div class="research-text fade-up">
         <h2 class="section-title">Equity Research Showcase</h2>
-        <p class="section-subtitle">A featured sample of my analytical work.</p>
+        <p class="section-subtitle">A showcase of my Equity Research skills.</p>
         <p><strong style="color:#fff;">Costco Wholesale Corporation (NASDAQ: COST) — Equity Research Report</strong></p>
         <p>Base case assume limited impact from the geopolitical tension, Costco grows at a slightly faster pace, steady margin, and dividend payment increasing steadily at 11% per year. In this case, EPS is expected to grow 11.42% and valuation maintains, resulting in price target of $1,062.39 for FY end 2026, potential upside of 5.07%.</p>
         <p>Bear case considers potential increase in cost to upkeep CAPEX due to geopolitical tension and decrease in dividend payout, in which case earnings can take a hit and valuation retract towards its previous level of 37.5x P/E. An immediate retraction is unlikely but a retraction to 45x P/E is a reasonable level, resulting in an implied price of $895.50 for FY end 2026, potential downside of 11.43%.</p>
@@ -919,24 +885,6 @@
         </a>
       </div>
 
-      <div class="research-preview fade-up stagger-2">
-        <div class="preview-header">
-          <div class="preview-icon">PDF</div>
-          <div class="ph-text">
-            <h4>COST — Equity Research Report</h4>
-            <span>2 Pages · April 2026</span>
-          </div>
-        </div>
-        <ul class="preview-toc">
-          <li>Data Overview &amp; Summary</li>
-          <li>Sales and Earnings Growth</li>
-          <li>Growth Estimates (FY2023A–FY2027E)</li>
-          <li>Valuation &amp; Peer Comparison (P/E, EV/EBITDA)</li>
-          <li>Reasons to Buy</li>
-          <li>Risks to Consider</li>
-          <li>Conclusion (Base &amp; Bear Case)</li>
-        </ul>
-      </div>
     </div>
   </section>
 
