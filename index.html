@@ -529,15 +529,16 @@
     .research-section .rs-2 { width: 180px; height: 180px; bottom: -50px; left: -30px; animation-delay: 5s; background: #B8986E; }
 
     .research-inner {
-      max-width: 1200px; margin: 0 auto;
-      display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem; align-items: center;
+      max-width: 780px; margin: 0 auto;
       position: relative; z-index: 1;
+      text-align: center;
     }
     .research-section .section-title { color: #fff; }
     .research-section .section-title::after { background: var(--khaki); }
     .research-section .section-subtitle { color: rgba(255,255,255,0.6); }
+    .research-text { text-align: left; }
     .research-text p { color: rgba(255,255,255,0.8); margin-bottom: 0.9rem; line-height: 1.7; font-size: 0.95rem; }
-    .research-highlights { display: flex; gap: 1.5rem; margin: 1.3rem 0; }
+    .research-highlights { display: flex; gap: 1.5rem; margin: 1.3rem 0; justify-content: center; }
     .rh-item { text-align: center; flex: 1; min-width: 80px; }
     .rh-item .rh-val { font-size: 1.5rem; font-weight: 700; color: var(--khaki); }
     .rh-item .rh-label { font-size: 0.75rem; color: rgba(255,255,255,0.55); }
@@ -672,7 +673,6 @@
       .about-grid { grid-template-columns: 1fr; }
       .two-col-grid { grid-template-columns: 1fr; }
       .insights-grid { grid-template-columns: 1fr; }
-      .research-inner { grid-template-columns: 1fr; }
       .navbar nav { display: none; }
       .navbar nav.open {
         display: flex; flex-direction: column;
@@ -879,10 +879,10 @@
           <div class="rh-item"><div class="rh-val" data-countup="5.07%">5.07%</div><div class="rh-label">Upside</div></div>
         </div>
 
-        <a href="COST_Equity_Research_Report.pdf" class="download-btn" target="_blank">
+        <div style="text-align:center;"><a href="COST_Equity_Research_Report.pdf" class="download-btn" target="_blank">
           <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
           Download Full Report (PDF)
-        </a>
+        </a></div>
       </div>
 
     </div>
