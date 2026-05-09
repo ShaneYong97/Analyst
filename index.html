@@ -374,7 +374,7 @@
 
     /* ===== TWO-COLUMN: KNOWLEDGE + INSIGHTS ===== */
     .two-col-section { padding: 4.5rem 2rem; max-width: 1200px; margin: 0 auto; }
-    .two-col-grid { display: grid; grid-template-columns: 1.4fr 1fr; gap: 2.5rem; }
+    .two-col-grid { display: grid; grid-template-columns: 1fr 1.6fr; gap: 2.5rem; }
 
     /* Knowledge Log (left) */
     .knowledge-col .col-title {
@@ -438,65 +438,12 @@
     }
     .ki-body p { font-size: 0.82rem; color: var(--grey-dark); line-height: 1.6; }
 
-    /* Knowledge Log scrollable container */
-    .knowledge-scroll {
-      max-height: 520px;
-      overflow-y: auto;
-      padding-right: 0.4rem;
-    }
-    .knowledge-scroll::-webkit-scrollbar {
-      width: 5px;
-    }
-    .knowledge-scroll::-webkit-scrollbar-track {
-      background: transparent;
-      border-radius: 3px;
-    }
-    .knowledge-scroll::-webkit-scrollbar-thumb {
-      background: rgba(184,152,110,0.35);
-      border-radius: 3px;
-    }
-    .knowledge-scroll::-webkit-scrollbar-thumb:hover {
-      background: rgba(184,152,110,0.55);
-    }
-    .knowledge-scroll {
-      scrollbar-width: thin;
-      scrollbar-color: rgba(184,152,110,0.35) transparent;
-    }
-
     /* Insights (right) */
     .insights-col .col-title {
       font-family: 'Playfair Display', Georgia, serif;
       font-size: 1.25rem; font-weight: 700; margin-bottom: 1.2rem;
     }
-    .insights-grid {
-      display: flex;
-      gap: 1rem;
-      overflow-x: auto;
-      padding-bottom: 0.6rem;
-      scroll-snap-type: x mandatory;
-    }
-    .insights-grid::-webkit-scrollbar {
-      height: 5px;
-    }
-    .insights-grid::-webkit-scrollbar-track {
-      background: transparent;
-      border-radius: 3px;
-    }
-    .insights-grid::-webkit-scrollbar-thumb {
-      background: rgba(184,152,110,0.35);
-      border-radius: 3px;
-    }
-    .insights-grid::-webkit-scrollbar-thumb:hover {
-      background: rgba(184,152,110,0.55);
-    }
-    .insights-grid {
-      scrollbar-width: thin;
-      scrollbar-color: rgba(184,152,110,0.35) transparent;
-    }
-    .insights-grid .insight-card-link {
-      flex: 0 0 240px;
-      scroll-snap-align: start;
-    }
+    .insights-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
     .insight-card {
       background: var(--card-bg); border: 1px solid var(--border);
       border-radius: 10px; overflow: hidden;
@@ -724,11 +671,8 @@
     /* ===== RESPONSIVE ===== */
     @media (max-width: 900px) {
       .about-grid { grid-template-columns: 1fr; }
-      .two-col-section { padding: 3rem 1.2rem; overflow: hidden; }
       .two-col-grid { grid-template-columns: 1fr; }
-      .knowledge-col, .insights-col { max-width: 100%; overflow: hidden; }
-      .insights-grid { max-width: 100%; }
-      .insights-grid .insight-card-link { flex: 0 0 220px; }
+      .insights-grid { grid-template-columns: 1fr; }
       .navbar nav { display: none; }
       .navbar nav.open {
         display: flex; flex-direction: column;
@@ -854,7 +798,6 @@
         <h2 class="col-title" style="position:relative;display:inline-block;">Knowledge Log<span style="position:absolute;left:0;bottom:-5px;width:40px;height:3px;background:var(--grey);border-radius:2px;"></span></h2>
         <p style="color:var(--grey);margin:0.8rem 0 1.3rem;font-size:0.88rem;">Snippets of knowledge learned throughout my journey.</p>
 
-        <div class="knowledge-scroll">
         <div class="knowledge-item stagger-1 fade-up" onclick="this.classList.toggle('open')">
           <div class="ki-header">
             <div class="ki-header-text">
@@ -911,7 +854,6 @@
             <p>Most suitable valuation method - DCF</p>
           </div>
         </div>
-        </div><!-- end knowledge-scroll -->
       </div>
 
       <!-- RIGHT: Insights & Sharing -->
