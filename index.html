@@ -438,6 +438,30 @@
     }
     .ki-body p { font-size: 0.82rem; color: var(--grey-dark); line-height: 1.6; }
 
+    /* Knowledge Log scrollable container */
+    .knowledge-scroll {
+      max-height: 420px;
+      overflow-y: auto;
+      padding-right: 0.4rem;
+    }
+    .knowledge-scroll::-webkit-scrollbar { width: 5px; }
+    .knowledge-scroll::-webkit-scrollbar-track { background: transparent; }
+    .knowledge-scroll::-webkit-scrollbar-thumb { background: rgba(184,152,110,0.35); border-radius: 3px; }
+    .knowledge-scroll::-webkit-scrollbar-thumb:hover { background: rgba(184,152,110,0.55); }
+    .knowledge-scroll { scrollbar-width: thin; scrollbar-color: rgba(184,152,110,0.35) transparent; }
+
+    /* Insights scrollable container */
+    .insights-scroll {
+      max-height: 420px;
+      overflow-y: auto;
+      padding-right: 0.4rem;
+    }
+    .insights-scroll::-webkit-scrollbar { width: 5px; }
+    .insights-scroll::-webkit-scrollbar-track { background: transparent; }
+    .insights-scroll::-webkit-scrollbar-thumb { background: rgba(184,152,110,0.35); border-radius: 3px; }
+    .insights-scroll::-webkit-scrollbar-thumb:hover { background: rgba(184,152,110,0.55); }
+    .insights-scroll { scrollbar-width: thin; scrollbar-color: rgba(184,152,110,0.35) transparent; }
+
     /* Insights (right) */
     .insights-col .col-title {
       font-family: 'Playfair Display', Georgia, serif;
@@ -798,6 +822,7 @@
         <h2 class="col-title" style="position:relative;display:inline-block;">Knowledge Log<span style="position:absolute;left:0;bottom:-5px;width:40px;height:3px;background:var(--grey);border-radius:2px;"></span></h2>
         <p style="color:var(--grey);margin:0.8rem 0 1.3rem;font-size:0.88rem;">Snippets of knowledge learned throughout my journey.</p>
 
+        <div class="knowledge-scroll">
         <div class="knowledge-item stagger-1 fade-up" onclick="this.classList.toggle('open')">
           <div class="ki-header">
             <div class="ki-header-text">
@@ -854,6 +879,7 @@
             <p>Most suitable valuation method - DCF</p>
           </div>
         </div>
+        </div><!-- end knowledge-scroll -->
       </div>
 
       <!-- RIGHT: Insights & Sharing -->
@@ -861,6 +887,7 @@
         <h2 class="col-title" style="position:relative;display:inline-block;">Insights &amp; Sharing<span style="position:absolute;left:0;bottom:-5px;width:40px;height:3px;background:var(--accent);border-radius:2px;"></span></h2>
         <p style="color:var(--grey);margin:0.8rem 0 1.3rem;font-size:0.88rem;">A piece of my mind.</p>
 
+        <div class="insights-scroll">
         <div class="insights-grid">
           <a href="insights/ai-efficient-vs-reliant.html" class="insight-card-link fade-up stagger-1">
             <div class="insight-card">
@@ -893,6 +920,7 @@
             </div>
           </a>
         </div>
+        </div><!-- end insights-scroll -->
       </div>
 
     </div>
