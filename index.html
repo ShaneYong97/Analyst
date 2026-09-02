@@ -207,7 +207,7 @@
       position: relative; display: inline-block;
     }
     .section-title::after {
-      content: ''; position: absolute; left: 0; bottom: -5px;
+      content: ''; position: absolute; left: 0; bottom: 0px;
       width: 45px; height: 3px; background: var(--accent); border-radius: 2px;
     }
     .section-subtitle { color: var(--grey); margin-bottom: 2rem; font-size: 0.92rem; }
@@ -633,6 +633,101 @@
     .preview-toc li:hover { transform: translateX(4px); color: rgba(255,255,255,0.9); }
     .preview-toc li::before { content: '\2192 '; color: var(--khaki); }
 
+    /* ===== PROJECTS ===== */
+    .projects-section {
+      padding: 4.5rem 2rem;
+      background: linear-gradient(160deg, #2E1A1A, #422A2E);
+      color: #fff;
+      position: relative; overflow: hidden;
+    }
+    .projects-section .shape {
+      position: absolute; border-radius: 50%; opacity: 0.06;
+      background: #B8986E; animation: floatShape 15s ease-in-out infinite;
+    }
+    .projects-section .ps-1 { width: 220px; height: 220px; top: -50px; left: -40px; }
+    .projects-section .ps-2 { width: 160px; height: 160px; bottom: -40px; right: -30px; animation-delay: 5s; }
+    .projects-inner { max-width: 1200px; margin: 0 auto; position: relative; z-index: 1; }
+    .projects-section .section-title { color: #fff; }
+    .projects-section .section-title::after { background: var(--khaki); }
+    .project-card {
+      background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 12px; padding: 2rem; margin-top: 1.5rem;
+      position: relative; overflow: hidden;
+    }
+    .project-title {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.15rem; font-weight: 700; margin-bottom: 0.4rem;
+      color: #fff;
+    }
+    .project-tag {
+      display: inline-block; font-size: 0.7rem; font-weight: 600;
+      color: #B8986E; background: rgba(184,152,110,0.15);
+      padding: 0.15rem 0.5rem; border-radius: 10px; margin-bottom: 1rem;
+    }
+    .project-desc { font-size: 0.88rem; color: rgba(255,255,255,0.7); line-height: 1.6; margin-bottom: 1.2rem; }
+    .project-metrics {
+      display: flex; gap: 1.5rem; margin-bottom: 1.5rem;
+      flex-wrap: wrap;
+    }
+    .pm-item { text-align: center; flex: 1; min-width: 100px; }
+    .pm-val { font-size: 1.3rem; font-weight: 700; color: #B8986E; }
+    .pm-label { font-size: 0.72rem; color: rgba(255,255,255,0.55); text-transform: uppercase; letter-spacing: 0.3px; }
+    .project-charts {
+      display: grid; grid-template-columns: 1fr 1.5fr; gap: 1.5rem;
+      margin-bottom: 1.5rem; align-items: start;
+    }
+    .chart-box {
+      background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 8px; padding: 1rem; text-align: center;
+    }
+    .chart-box h4 {
+      font-size: 0.8rem; font-weight: 600; color: rgba(255,255,255,0.7);
+      margin-bottom: 0.8rem; text-transform: uppercase; letter-spacing: 0.3px;
+    }
+    .chart-box canvas { max-width: 100%; }
+    .weights-legend {
+      display: flex; flex-wrap: wrap; gap: 0.4rem 0.8rem;
+      justify-content: center; margin-top: 0.8rem;
+    }
+    .wl-item { display: flex; align-items: center; gap: 0.3rem; font-size: 0.68rem; color: rgba(255,255,255,0.65); }
+    .wl-dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
+    .code-toggle {
+      display: inline-flex; align-items: center; gap: 0.4rem;
+      font-size: 0.82rem; font-weight: 600; color: #B8986E;
+      cursor: pointer; border: none; background: none; padding: 0;
+      font-family: inherit; transition: color .2s;
+      position: relative; z-index: 11;
+    }
+    .code-toggle:hover { color: #d4b896; }
+    .code-toggle .arrow { display: inline-block; transition: transform .3s var(--ease-material); font-size: 0.7rem; }
+    .code-wrap {
+      position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+      z-index: 10; background: #1A1A2E; border-radius: 12px;
+      clip-path: inset(0 100% 0 0);
+      transition: clip-path .5s cubic-bezier(0.4, 0, 0.2, 1);
+      overflow-y: auto;
+    }
+    .code-wrap.open { clip-path: inset(0 0 0 0); }
+    .code-close {
+      position: sticky; top: 0; z-index: 12;
+      display: flex; align-items: center; gap: 0.4rem;
+      padding: 1rem 1.5rem 0.5rem; cursor: pointer;
+      font-size: 0.82rem; font-weight: 600; color: var(--accent);
+      background: #1A1A2E; border: none; font-family: inherit;
+    }
+    .code-close:hover { color: #E8E4DE; }
+    .code-wrap pre {
+      background: #1A1A2E; color: #E8E4DE;
+      padding: 0.5rem 1.5rem 1.5rem;
+      font-size: 0.78rem; line-height: 1.6;
+      overflow-x: auto; white-space: pre;
+      font-family: 'Courier New', monospace;
+      margin: 0;
+    }
+    @media (max-width: 900px) {
+      .project-charts { grid-template-columns: 1fr; }
+    }
+
     /* ===== FOOTER ===== */
     .footer {
       background: #141420; color: rgba(255,255,255,0.6);
@@ -746,6 +841,7 @@
       <a href="#about" data-nav>About</a>
       <a href="#explore" data-nav>Knowledge & Insights</a>
       <a href="#research" data-nav>Research</a>
+      <a href="#portfolio" data-nav>Portfolio</a>
       <a href="#contact" data-nav>Contact</a>
     </nav>
   </header>
@@ -784,6 +880,7 @@
           <span class="skill-tag">Derivative Strategies</span>
           <span class="skill-tag">Stakeholder Management</span>
           <span class="skill-tag">Credit Analysis</span>
+          <span class="skill-tag">Python Programming</span>
         </div>
       </div>
       <div class="fade-up stagger-2 bubble-container">
@@ -975,6 +1072,137 @@
     </div>
   </section>
 
+  <!-- ===== PROJECTS ===== -->
+  <section class="projects-section" id="portfolio">
+    <div class="shape ps-1"></div>
+    <div class="shape ps-2"></div>
+    <div class="projects-inner">
+    <div class="fade-up">
+      <h2 class="section-title">Portfolio Optimization with Python</h2>
+      <p class="section-subtitle" style="color:rgba(255,255,255,0.6);margin-top:-0.5rem;margin-bottom:1rem;font-size:0.88rem;">Finding the optimal allocation that maximize Sharpe Ratio</p>
+    </div>
+
+    <div class="project-card fade-up">
+      <h3 class="project-title">Monte Carlo Simulations</h3>
+      <span class="project-tag">Python</span>
+      <p class="project-desc">A Monte Carlo simulation engine that generates 10,000 random portfolio weight combinations across 10 holdings (7 equities + 3 fixed income ETFs), computing expected return, volatility, and Sharpe ratio for each. The optimal portfolio is identified by the highest Sharpe ratio on the efficient frontier.</p>
+
+      <div class="project-metrics">
+        <div class="pm-item"><div class="pm-val">32.52%</div><div class="pm-label">Expected Return</div></div>
+        <div class="pm-item"><div class="pm-val">18.36%</div><div class="pm-label">Volatility</div></div>
+        <div class="pm-item"><div class="pm-val">1.526</div><div class="pm-label">Sharpe Ratio</div></div>
+      </div>
+
+      <div class="project-charts">
+        <div class="chart-box">
+          <h4>Optimal Weights</h4>
+          <canvas id="pieChart" width="240" height="240"></canvas>
+          <div class="weights-legend" id="pieLegend"></div>
+        </div>
+        <div class="chart-box">
+          <h4>Efficient Frontier (10,000 Simulations)</h4>
+          <img src="efficient_frontier.png" alt="Efficient Frontier scatter plot" style="width:100%;border-radius:4px;">
+        </div>
+      </div>
+
+      <button class="code-toggle" onclick="var w=document.getElementById('codeWrap');w.classList.add('open');this.querySelector('.arrow').style.transform='rotate(90deg)'">
+        <span class="arrow">&#9654;</span> View Python Code
+      </button>
+      <div class="code-wrap" id="codeWrap">
+        <button class="code-close" onclick="var w=document.getElementById('codeWrap');w.classList.remove('open');document.querySelector('.code-toggle .arrow').style.transform='rotate(0deg)'">&#10005; Close Code</button>
+        <pre><code>import pandas as pd
+import numpy as np
+import plotly_express as px
+
+AMZN_df = pd.read_csv('AMZN_data.csv')
+ANET_df = pd.read_csv('ANET_data.csv')
+CEG_df = pd.read_csv('CEG_data.csv')
+GM_df = pd.read_csv('GM_data.csv')
+MSFT_df = pd.read_csv('MSFT_data.csv')
+MU_df = pd.read_csv('MU_data.csv')
+SGOV_df = pd.read_csv('SGOV_data.csv')
+VCSH_df = pd.read_csv('VCSH_data.csv')
+VTIP_df = pd.read_csv('VTIP_data.csv')
+VZ_df = pd.read_csv('VZ_data.csv')
+
+Portfolio_daily_return_df = pd.DataFrame({
+    'Date': AMZN_df['datetime'],
+    'AMZN': AMZN_df['return'],
+    'ANET': ANET_df['return'],
+    'CEG': CEG_df['return'],
+    'GM': GM_df['return'],
+    'MSFT': MSFT_df['return'],
+    'MU': MU_df['return'],
+    'VZ': VZ_df['return'],
+    'SGOV': SGOV_df['return'],
+    'VCSH': VCSH_df['return'],
+    'VTIP': VTIP_df['return']
+})
+
+import random
+random.random()
+def generate_weights(n):
+    weights = []
+    for i in range(n):
+        weights.append(random.random())
+    weights = weights/np.sum(weights)
+    return (weights)
+n=len(Portfolio_daily_return_df.columns)-1
+weights = generate_weights(n)
+
+def simulation_engine(weights):
+    Portfolio_returns_df = Portfolio_daily_return_df.drop(columns='Date')
+    expected_return = np.sum(weights * Portfolio_returns_df.mean() * 252)
+    rf = 0.045
+    covariance = Portfolio_returns_df.cov() * 252
+    expected_volatility = np.sqrt(np.dot(weights.T, np.dot(covariance, weights)))
+    sharpe_ratio = (expected_return - rf) / expected_volatility
+    return expected_return, expected_volatility, sharpe_ratio
+
+sim_runs=10000
+weights_runs = np.zeros((sim_runs,n))
+volatility_runs = np.zeros(sim_runs)
+expected_return_runs = np.zeros(sim_runs)
+sharpe_ratio_runs = np.zeros(sim_runs)
+
+for i in range(sim_runs):
+    weights = generate_weights(n)
+    weights_runs[i:] = weights
+    expected_return_runs[i], volatility_runs[i],sharpe_ratio_runs[i] = simulation_engine(weights)
+
+Simulated_df = pd.DataFrame({
+    'Expected Return':expected_return_runs*100,
+    'Expected Volatility':volatility_runs*100,
+    'Sharpe Ratio':sharpe_ratio_runs
+})
+
+optimal_index = Simulated_df['Sharpe Ratio'].argmax()
+optimal_return, optimal_volatility, optimal_sharpe = simulation_engine(weights_runs[optimal_index])
+
+fig = px.scatter(Simulated_df,x='Expected Volatility', y='Expected Return',
+                 color='Sharpe Ratio', size='Sharpe Ratio',hover_data='Sharpe Ratio')
+fig.update_layout({'plot_bgcolor': 'white'})
+fig.show()
+
+weights_list = weights_runs[i].tolist()
+optimal_weights = weights_runs[optimal_index]
+
+print(
+    f'Optimal Return = {optimal_return*100:.2f}%',
+    f'Optimal Set Volatility = {optimal_volatility*100:.2f}%',
+    f'Optimal Sharpe Ratio = {optimal_sharpe:.3f}'
+)
+for i in range(n):
+    print(
+        'Optimal Weight of {} = {:.2%}'.format(
+            Portfolio_daily_return_df.columns[i+1],
+            optimal_weights[i]
+        ))</code></pre>
+      </div>
+    </div>
+    </div>
+  </section>
+
   <!-- ===== FOOTER ===== -->
   <footer class="footer" id="contact">
     <div class="footer-inner">
@@ -984,6 +1212,7 @@
         <a href="#about">About</a>
         <a href="#explore">Knowledge</a>
         <a href="#research">Research</a>
+        <a href="#portfolio">Portfolio</a>
       </div>
       <p>&copy; 2026 Shane Yong. Built as a learning portfolio.</p>
     </div>
@@ -1148,6 +1377,68 @@
     // Initial calls
     updateScrollProgress();
     updateNavbar();
+
+    // ===== PIE CHART =====
+    (function(){
+      const data = [
+        {label:'CEG',val:20.74},  {label:'ANET',val:19.41},
+        {label:'MU',val:17.65},   {label:'AMZN',val:12.09},
+        {label:'GM',val:11.35},   {label:'VCSH',val:9.25},
+        {label:'SGOV',val:4.57},  {label:'MSFT',val:2.75},
+        {label:'VTIP',val:1.99},  {label:'VZ',val:0.22}
+      ];
+      const colors = ['#B8986E','#9A7D56','#D4C4A8','#4A6FA5','#6B8F71',
+                       '#C4956A','#7A9CC6','#E8B87A','#8FB8A0','#BFBFBF'];
+      const c = document.getElementById('pieChart');
+      if(!c) return;
+      const ctx = c.getContext('2d');
+      const cx=c.width/2, cy=c.height/2, r=Math.min(cx,cy)-10;
+      let start = -Math.PI/2;
+      var sliceAngles = [];
+      data.forEach(function(d,i){
+        const slice = (d.val/100)*2*Math.PI;
+        ctx.beginPath();
+        ctx.moveTo(cx,cy);
+        ctx.arc(cx,cy,r,start,start+slice);
+        ctx.fillStyle=colors[i];
+        ctx.fill();
+        sliceAngles.push({start:start, slice:slice, label:d.label, val:d.val});
+        start+=slice;
+      });
+      // center hole
+      ctx.beginPath();
+      ctx.arc(cx,cy,r*0.5,0,2*Math.PI);
+      ctx.fillStyle='#3A2225';
+      ctx.fill();
+      // slice labels
+      sliceAngles.forEach(function(s){
+        if(s.val >= 4) {
+          var mid = s.start + s.slice/2;
+          var lr = r * 0.75;
+          var lx = cx + lr * Math.cos(mid);
+          var ly = cy + lr * Math.sin(mid);
+          ctx.fillStyle='#FFFFFF';
+          ctx.font='bold 8px Inter, sans-serif';
+          ctx.textAlign='center';
+          ctx.textBaseline='middle';
+          ctx.fillText(s.label,lx,ly-5);
+          ctx.font='7px Inter, sans-serif';
+          ctx.fillText(s.val+'%',lx,ly+5);
+        }
+      });
+      // center text
+      ctx.fillStyle='rgba(255,255,255,0.85)';
+      ctx.font='bold 13px Inter, sans-serif';
+      ctx.textAlign='center';
+      ctx.textBaseline='middle';
+      ctx.fillText('10 Holdings',cx,cy);
+      // legend
+      const leg=document.getElementById('pieLegend');
+      if(leg) data.forEach(function(d,i){
+        leg.innerHTML+='<span class="wl-item"><span class="wl-dot" style="background:'+colors[i]+'"></span>'+d.label+' '+d.val+'%</span>';
+      });
+    })();
+
   </script>
 
 </body>
